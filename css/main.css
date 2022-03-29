@@ -1,0 +1,9 @@
+html, body {
+  background-color: #0F0F11;
+  background: #0F0F11;
+  }
+
+.swal2-textarea {
+  height: 100%;
+  resize: none;
+}
