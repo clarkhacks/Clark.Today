@@ -61,6 +61,22 @@
             }
         </style>
     </noscript>
+    <script>
+        let req = new XMLHttpRequest();
+
+req.onreadystatechange = () => {
+  if (req.readyState == XMLHttpRequest.DONE) {
+    console.log(req.responseText);
+    //get status elment and set it to the response text
+    // convert resposne to JSON
+
+    document.getElementById("status").innerHTML = JSON.parse(req.responseText).status;
+  }
+};
+
+req.open("GET", "https://api.npoint.io/8581aad10a52b0380df0", true);
+req.send();
+    </script>
 </head>
 
 <body class="is-loading"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -101,7 +117,7 @@
                             </div>
                             <div>
                                 <h1 id="text02">Clark Weckmann</h1>
-                                <p id="text03"><strong>Currently:</strong> Building your next review managment software 💫</p>
+                                <p id="text03"><strong>Currently:</strong> <span id="status">Getting Latest Updates...</span></p>
                                 <p id="text01">I&#039;m a DevOps engineer located on Earth, for now. Feel free to ask me
                                     questions about any of my projects listed here or anywhere else you find me!</p>
                                 <hr id="divider01">
