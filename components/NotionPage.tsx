@@ -211,6 +211,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const title = getBlockTitle(block, recordMap) || site.name
 
+if (config.isDev) {
   console.log('notion page', {
     isDev: config.isDev,
     title,
@@ -218,6 +219,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
     rootNotionPageId: site.rootNotionPageId,
     recordMap
   })
+}
 
 
   const canonicalPageUrl =
